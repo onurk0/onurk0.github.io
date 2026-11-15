@@ -1,15 +1,15 @@
 /* Shared color palettes. data-theme = "<palette>-<light|dark>" (set by theme.js). */
-/* ── DEFAULT: Forest Light ── */
+/* ── DEFAULT: Slate Light (no-JS fallback; theme.js sets data-theme) ── */
 :root {
-  --bg: #f9f8f6; --surface: #ffffff; --text: #1a1a18; --muted: #6b6b67;
-  --border: #e4e2db; --accent: #2a6049; --tag-bg: #f0efea; --tag-text: #444440;
-  --nav-bg: rgba(249,248,246,0.9);
+  --bg: #f4f5f7; --surface: #ffffff; --text: #141820; --muted: #586070;
+  --border: #d8dce8; --accent: #2c5080; --tag-bg: #e8ecf4; --tag-text: #283858;
+  --nav-bg: rgba(244,245,247,0.92);
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme]) {
-    --bg: #111110; --surface: #1c1c1a; --text: #e8e6e0; --muted: #888884;
-    --border: #2e2e2b; --accent: #4caf87; --tag-bg: #242422; --tag-text: #b0aea8;
-    --nav-bg: rgba(17,17,16,0.9);
+    --bg: #0a0c10; --surface: #111418; --text: #c8ccd8; --muted: #586070;
+    --border: #1e2230; --accent: #6a9fd8; --tag-bg: #161a24; --tag-text: #8898b8;
+    --nav-bg: rgba(10,12,16,0.92);
   }
 }
 
