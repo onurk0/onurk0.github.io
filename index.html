@@ -3,478 +3,106 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Onur Kose</title>
+  <title>Onur Kose · Software Developer</title>
+  <meta name="description" content="Onur Kose, computer science student at The College of New Jersey. Projects in full-stack web, systems, and networking."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@300;400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    /* ── DEFAULT: Forest Light ── */
-    :root {
-      --bg: #f9f8f6; --surface: #ffffff; --text: #1a1a18; --muted: #6b6b67;
-      --border: #e4e2db; --accent: #2a6049; --tag-bg: #f0efea; --tag-text: #444440;
-      --nav-bg: rgba(249,248,246,0.9);
-    }
-    @media (prefers-color-scheme: dark) {
-      :root:not([data-theme]) {
-        --bg: #111110; --surface: #1c1c1a; --text: #e8e6e0; --muted: #888884;
-        --border: #2e2e2b; --accent: #4caf87; --tag-bg: #242422; --tag-text: #b0aea8;
-        --nav-bg: rgba(17,17,16,0.9);
-      }
-    }
-
-    /* ── FOREST ── */
-    [data-theme="forest-light"] {
-      --bg: #f9f8f6; --surface: #ffffff; --text: #1a1a18; --muted: #6b6b67;
-      --border: #e4e2db; --accent: #2a6049; --tag-bg: #f0efea; --tag-text: #444440;
-      --nav-bg: rgba(249,248,246,0.9);
-    }
-    [data-theme="forest-dark"] {
-      --bg: #0e120f; --surface: #161d17; --text: #d4e0d6; --muted: #7a9480;
-      --border: #253028; --accent: #4caf87; --tag-bg: #1a241c; --tag-text: #98c4a2;
-      --nav-bg: rgba(14,18,15,0.92);
-    }
-    /* ── OCEAN ── */
-    [data-theme="ocean-light"] {
-      --bg: #f0f5fa; --surface: #ffffff; --text: #0f1f2e; --muted: #4f6e88;
-      --border: #cddcec; --accent: #1560a8; --tag-bg: #e4eef8; --tag-text: #1e456e;
-      --nav-bg: rgba(240,245,250,0.92);
-    }
-    [data-theme="ocean-dark"] {
-      --bg: #07111c; --surface: #0e1d2c; --text: #c8d8e8; --muted: #4e6e88;
-      --border: #152535; --accent: #4d9fd4; --tag-bg: #0d1f30; --tag-text: #80aece;
-      --nav-bg: rgba(7,17,28,0.92);
-    }
-    /* ── VIOLET ── */
-    [data-theme="violet-light"] {
-      --bg: #f7f5ff; --surface: #ffffff; --text: #16122a; --muted: #6b6190;
-      --border: #e0d9f8; --accent: #5b3fc8; --tag-bg: #ede8ff; --tag-text: #3d2e88;
-      --nav-bg: rgba(247,245,255,0.92);
-    }
-    [data-theme="violet-dark"] {
-      --bg: #0c0b14; --surface: #13111e; --text: #d8d4f0; --muted: #6b68a0;
-      --border: #201d38; --accent: #8a76f5; --tag-bg: #181528; --tag-text: #a098d4;
-      --nav-bg: rgba(12,11,20,0.92);
-    }
-    /* ── ROSE ── */
-    [data-theme="rose-light"] {
-      --bg: #fdf5f6; --surface: #ffffff; --text: #1f1214; --muted: #885868;
-      --border: #f2dde0; --accent: #b53048; --tag-bg: #fce8ec; --tag-text: #7a2535;
-      --nav-bg: rgba(253,245,246,0.92);
-    }
-    [data-theme="rose-dark"] {
-      --bg: #140b0d; --surface: #1e1215; --text: #e8d0d4; --muted: #886070;
-      --border: #321820; --accent: #e06080; --tag-bg: #281520; --tag-text: #c48898;
-      --nav-bg: rgba(20,11,13,0.92);
-    }
-    /* ── AMBER ── */
-    [data-theme="amber-light"] {
-      --bg: #fdf8ef; --surface: #ffffff; --text: #1e1608; --muted: #806840;
-      --border: #ede5cc; --accent: #9e6010; --tag-bg: #f5e8d0; --tag-text: #6b4410;
-      --nav-bg: rgba(253,248,239,0.92);
-    }
-    [data-theme="amber-dark"] {
-      --bg: #131008; --surface: #1d180e; --text: #e8ddc0; --muted: #907850;
-      --border: #2e2810; --accent: #d4942a; --tag-bg: #221c0c; --tag-text: #c0a060;
-      --nav-bg: rgba(19,16,8,0.92);
-    }
-    /* ── SLATE ── */
-    [data-theme="slate-light"] {
-      --bg: #f4f5f7; --surface: #ffffff; --text: #141820; --muted: #586070;
-      --border: #d8dce8; --accent: #2c5080; --tag-bg: #e8ecf4; --tag-text: #283858;
-      --nav-bg: rgba(244,245,247,0.92);
-    }
-    [data-theme="slate-dark"] {
-      --bg: #0a0c10; --surface: #111418; --text: #c8ccd8; --muted: #586070;
-      --border: #1e2230; --accent: #6a9fd8; --tag-bg: #161a24; --tag-text: #8898b8;
-      --nav-bg: rgba(10,12,16,0.92);
-    }
-    /* ── MONO ── */
-    [data-theme="mono-light"] {
-      --bg: #f8f8f8; --surface: #ffffff; --text: #111111; --muted: #777777;
-      --border: #e0e0e0; --accent: #111111; --tag-bg: #efefef; --tag-text: #444444;
-      --nav-bg: rgba(248,248,248,0.92);
-    }
-    [data-theme="mono-dark"] {
-      --bg: #0d0d0d; --surface: #181818; --text: #e8e8e8; --muted: #888888;
-      --border: #2a2a2a; --accent: #e8e8e8; --tag-bg: #222222; --tag-text: #aaaaaa;
-      --nav-bg: rgba(13,13,13,0.92);
-    }
-
-    /* ── THEME PICKER ── */
-    .theme-picker {
-      position: fixed; bottom: 1.5rem; right: 1.5rem;
-      z-index: 200; display: flex; flex-direction: column; align-items: flex-end; gap: 10px;
-    }
-    .theme-toggle-btn {
-      width: 40px; height: 40px; border-radius: 50%;
-      background: var(--surface); border: 1px solid var(--border);
-      cursor: pointer; display: flex; align-items: center; justify-content: center;
-      font-size: 16px; transition: border-color 0.2s, transform 0.2s;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.1);
-    }
-    .theme-toggle-btn:hover { transform: scale(1.08); border-color: var(--accent); }
-    .theme-panel {
-      opacity: 0; pointer-events: none;
-      transform: translateY(8px) scale(0.97);
-      transition: opacity 0.2s, transform 0.2s;
-      background: var(--surface); border: 1px solid var(--border);
-      border-radius: 12px; padding: 12px;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.12);
-      min-width: 220px;
-    }
-    .theme-panel.open { opacity: 1; pointer-events: all; transform: translateY(0) scale(1); }
-    .theme-panel-title {
-      font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.12em;
-      text-transform: uppercase; color: var(--muted); padding: 2px 4px 8px;
-      border-bottom: 1px solid var(--border); margin-bottom: 8px;
-    }
-    .theme-group {
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 5px 4px; border-radius: 6px; margin-bottom: 2px;
-      transition: background 0.15s;
-    }
-    .theme-group:hover { background: var(--tag-bg); }
-    .theme-group-name {
-      font-family: 'DM Mono', monospace; font-size: 12px;
-      color: var(--text); flex: 1;
-    }
-    .theme-mode-btns { display: flex; gap: 4px; }
-    .mode-btn {
-      display: flex; align-items: center; gap: 4px;
-      padding: 3px 8px; border-radius: 4px; border: 1px solid var(--border);
-      background: transparent; cursor: pointer; font-family: 'DM Mono', monospace;
-      font-size: 10px; color: var(--muted); transition: all 0.15s;
-    }
-    .mode-btn:hover { border-color: var(--accent); color: var(--accent); }
-    .mode-btn.active { background: var(--accent); border-color: var(--accent); color: var(--bg); }
-    .mode-dot {
-      width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0;
-    }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      font-family: 'DM Sans', sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.7;
-      font-size: 16px;
-    }
-
-    /* NAV */
-    nav {
-      position: fixed; top: 0; left: 0; right: 0;
-      background: var(--nav-bg);
-      backdrop-filter: blur(8px);
-      border-bottom: 1px solid var(--border);
-      z-index: 100;
-      padding: 0 2rem;
-      display: flex; align-items: center; justify-content: space-between;
-      height: 56px;
-    }
-    .nav-logo {
-      font-family: 'DM Mono', monospace;
-      font-size: 14px;
-      color: var(--accent);
-      letter-spacing: 0.05em;
-      text-decoration: none;
-    }
-    .nav-links { display: flex; gap: 2rem; list-style: none; align-items: center; }
-    .nav-links a {
-      text-decoration: none;
-      font-size: 14px;
-      color: var(--muted);
-      font-weight: 400;
-      transition: color 0.2s;
-    }
-    .nav-links a:hover { color: var(--text); }
-    .nav-resume {
-      font-family: 'DM Mono', monospace;
-      font-size: 12px !important;
-      color: var(--accent) !important;
-      border: 1px solid var(--accent);
-      padding: 5px 12px;
-      border-radius: 4px;
-      transition: background 0.2s, color 0.2s !important;
-    }
-    .nav-resume:hover { background: var(--accent); color: var(--bg) !important; }
-
-    /* LAYOUT */
-    main { max-width: 760px; margin: 0 auto; padding: 0 2rem; }
-    section { padding: 5rem 0; border-bottom: 1px solid var(--border); }
-    section:last-child { border-bottom: none; }
-
-    /* HERO */
-    #hero { padding-top: 9rem; padding-bottom: 5rem; }
-    .hero-eyebrow {
-      font-family: 'DM Mono', monospace;
-      font-size: 12px;
-      color: var(--accent);
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      margin-bottom: 1.25rem;
-    }
-    .hero-name {
-      font-family: 'DM Serif Display', serif;
-      font-size: clamp(2.8rem, 7vw, 4.5rem);
-      line-height: 1.05;
-      letter-spacing: -0.02em;
-      color: var(--text);
-      margin-bottom: 1.5rem;
-    }
-    .hero-name em {
-      font-style: italic;
-      color: var(--accent);
-    }
-    .hero-bio {
-      font-size: 1.1rem;
-      color: var(--muted);
-      max-width: 520px;
-      margin-bottom: 2.5rem;
-      line-height: 1.75;
-      font-weight: 300;
-    }
-    .hero-cta {
-      display: inline-flex; align-items: center; gap: 8px;
-      background: var(--text);
-      color: var(--bg);
-      padding: 0.65rem 1.4rem;
-      border-radius: 4px;
-      text-decoration: none;
-      font-size: 14px;
-      font-weight: 500;
-      transition: background 0.2s;
-    }
-    .hero-cta:hover { background: var(--accent); }
-
-    /* SECTION HEADINGS */
-    .section-label {
-      font-family: 'DM Mono', monospace;
-      font-size: 11px;
-      color: var(--accent);
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      margin-bottom: 0.6rem;
-    }
-    .section-title {
-      font-family: 'DM Serif Display', serif;
-      font-size: 2rem;
-      letter-spacing: -0.02em;
-      line-height: 1.2;
-      margin-bottom: 2.5rem;
-    }
-
-    /* ABOUT */
-    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; }
-    .about-text p { color: var(--muted); font-weight: 300; margin-bottom: 1rem; }
-    .about-links { display: flex; flex-direction: column; gap: 0.5rem; margin-top: 1.5rem; }
-    .about-link {
-      font-family: 'DM Mono', monospace;
-      font-size: 13px;
-      color: var(--text);
-      text-decoration: none;
-      display: flex; align-items: center; gap: 8px;
-    }
-    .about-link::before { content: '→'; color: var(--accent); }
-    .about-link:hover { color: var(--accent); }
-    .about-stats { display: flex; flex-direction: column; gap: 1.25rem; }
-    .stat-item {
-      padding: 1.25rem;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-    }
-    .stat-number {
-      font-family: 'DM Serif Display', serif;
-      font-size: 2rem;
-      color: var(--text);
-      line-height: 1;
-      margin-bottom: 0.25rem;
-    }
-    .stat-desc { font-size: 13px; color: var(--muted); font-weight: 300; }
-
-    /* PROJECTS */
-    .projects-list { display: flex; flex-direction: column; gap: 1.5rem; }
-    .project-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 1.75rem;
-      transition: border-color 0.2s, transform 0.2s;
-      position: relative;
-      overflow: hidden;
-    }
-    .project-card::before {
-      content: '';
-      position: absolute; top: 0; left: 0;
-      width: 3px; height: 100%;
-      background: var(--accent);
-      transform: scaleY(0);
-      transform-origin: bottom;
-      transition: transform 0.25s;
-    }
-    .project-card:hover { border-color: var(--muted); transform: translateY(-2px); }
-    .project-card:hover::before { transform: scaleY(1); }
-    .project-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.75rem; }
-    .project-name {
-      font-family: 'DM Serif Display', serif;
-      font-size: 1.25rem;
-      letter-spacing: -0.01em;
-      color: var(--text);
-    }
-    .project-links { display: flex; gap: 0.75rem; }
-    .project-link {
-      font-family: 'DM Mono', monospace;
-      font-size: 12px;
-      color: var(--muted);
-      text-decoration: none;
-      padding: 4px 10px;
-      border: 1px solid var(--border);
-      border-radius: 4px;
-      transition: color 0.2s, border-color 0.2s;
-    }
-    .project-link:hover { color: var(--accent); border-color: var(--accent); }
-    .project-desc { font-size: 14px; color: var(--muted); font-weight: 300; margin-bottom: 1rem; line-height: 1.6; }
-    .project-tags { display: flex; flex-wrap: wrap; gap: 6px; }
-    .tag {
-      font-family: 'DM Mono', monospace;
-      font-size: 11px;
-      background: var(--tag-bg);
-      color: var(--tag-text);
-      padding: 3px 10px;
-      border-radius: 3px;
-      letter-spacing: 0.02em;
-    }
-
-    /* SKILLS */
-    .skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
-    .skill-group-title {
-      font-family: 'DM Mono', monospace;
-      font-size: 11px;
-      color: var(--accent);
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      margin-bottom: 1rem;
-    }
-    .skill-pills { display: flex; flex-wrap: wrap; gap: 8px; }
-    .skill-pill {
-      font-family: 'DM Mono', monospace;
-      font-size: 12px;
-      padding: 6px 14px;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 4px;
-      color: var(--text);
-      transition: border-color 0.2s, color 0.2s;
-    }
-    .skill-pill:hover { border-color: var(--accent); color: var(--accent); }
-
-    /* CONTACT */
-    .contact-inner {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 3rem;
-      text-align: center;
-    }
-    .contact-inner .section-title { margin-bottom: 0.75rem; }
-    .contact-sub { color: var(--muted); font-weight: 300; margin-bottom: 2.5rem; font-size: 15px; }
-    .contact-email {
-      display: inline-block;
-      font-family: 'DM Serif Display', serif;
-      font-size: 1.4rem;
-      color: var(--text);
-      text-decoration: none;
-      border-bottom: 2px solid var(--accent);
-      padding-bottom: 2px;
-      transition: color 0.2s;
-      margin-bottom: 2rem;
-    }
-    .contact-email:hover { color: var(--accent); }
-    .contact-socials { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
-    .social-btn {
-      font-family: 'DM Mono', monospace;
-      font-size: 13px;
-      padding: 0.6rem 1.2rem;
-      border: 1px solid var(--border);
-      border-radius: 4px;
-      text-decoration: none;
-      color: var(--muted);
-      transition: color 0.2s, border-color 0.2s;
-    }
-    .social-btn:hover { color: var(--text); border-color: var(--text); }
-
-    /* FOOTER */
-    footer {
-      text-align: center;
-      padding: 2.5rem;
-      font-family: 'DM Mono', monospace;
-      font-size: 12px;
-      color: var(--muted);
-    }
-
-    /* ANIMATIONS */
-    .fade-in {
-      opacity: 0;
-      transform: translateY(16px);
-      transition: opacity 0.5s ease, transform 0.5s ease;
-    }
-    .fade-in.visible { opacity: 1; transform: translateY(0); }
-
-    /* RESPONSIVE */
-    @media (max-width: 600px) {
-      .about-grid { grid-template-columns: 1fr; }
-      .skills-grid { grid-template-columns: 1fr; }
-      .project-header { flex-direction: column; gap: 0.75rem; }
-      nav { padding: 0 1rem; }
-      main { padding: 0 1.25rem; }
-      .contact-inner { padding: 2rem 1.5rem; }
-    }
-  </style>
+  <link rel="stylesheet" href="./css/theme.css"/>
+  <script src="./js/theme.js"></script>
+  <link rel="stylesheet" href="./css/style.css"/>
 </head>
 <body>
+  <a href="#main" class="skip-link">Skip to content</a>
 
-  <nav>
-    <a href="#hero" class="nav-logo"></a>
-    <ul class="nav-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#contact">Contact</a></li>
-      <li><a href="./resume.html" class="nav-resume">Resume ↗</a></li>
-    </ul>
+  <!-- SVG icon sprite -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-github" viewBox="0 0 24 24"><path d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.19 1.76 1.19 1.03 1.76 2.69 1.25 3.35.96.1-.75.4-1.25.73-1.54-2.56-.29-5.25-1.28-5.25-5.68 0-1.26.45-2.28 1.18-3.09-.12-.29-.51-1.46.11-3.04 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.62 1.58.23 2.75.11 3.04.74.81 1.18 1.83 1.18 3.09 0 4.41-2.69 5.38-5.26 5.67.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5Z"/></symbol>
+    <symbol id="i-linkedin" viewBox="0 0 24 24"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0Z"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></symbol>
+    <symbol id="i-file" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></symbol>
+    <symbol id="i-cap" viewBox="0 0 24 24"><path d="M22 10 12 5 2 10l10 5 10-5Z"/><path d="M6 12v5c3 2 9 2 12 0v-5"/></symbol>
+    <symbol id="i-copy" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></symbol>
+  </svg>
+
+  <nav id="nav">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo" aria-label="Onur Kose, back to top">onur<span>.</span></a>
+      <div class="nav-right">
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#about">About</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="./resume/index.html" class="nav-resume">Resume ↗</a></li>
+        </ul>
+        <div class="theme-wrap">
+          <button class="icon-btn" id="paletteBtn" aria-label="Choose color theme" aria-expanded="false" aria-controls="palettePop">
+            <svg class="icon" viewBox="0 0 24 24"><circle cx="13.5" cy="6.5" r="1.2"/><circle cx="17.5" cy="10.5" r="1.2"/><circle cx="8.5" cy="7.5" r="1.2"/><circle cx="6.5" cy="12.5" r="1.2"/><path d="M12 2a10 10 0 0 0 0 20c.93 0 1.5-.75 1.5-1.5 0-.39-.15-.74-.39-1.01-.23-.26-.38-.61-.38-.99 0-.83.67-1.5 1.5-1.5H16a6 6 0 0 0 6-6c0-4.97-4.48-9-10-9Z"/></svg>
+          </button>
+          <div class="palette-pop" id="palettePop" hidden>
+            <p class="palette-pop-title">Accent color</p>
+            <div class="swatches" id="swatches"></div>
+          </div>
+        </div>
+        <button class="icon-btn" id="modeBtn" aria-label="Toggle light or dark mode">
+          <svg class="icon icon-moon" viewBox="0 0 24 24"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg>
+          <svg class="icon icon-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        </button>
+        <button class="icon-btn menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+          <svg class="icon" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+      </div>
+    </div>
   </nav>
 
-  <main>
+  <main id="main">
 
     <!-- HERO -->
     <section id="hero">
-      <p class="hero-eyebrow">Computer Science Student at The College of New Jersey</p>
-      <h1 class="hero-name">Hi, I'm<br/><em>Onur.</em></h1>
-       <p class="hero-bio">
-        Caffeinated computer science student actively seeking a Summer 2026 Internship!
+      <p class="status"><span class="status-dot"></span>Open to software engineering opportunities</p>
+      <h1 class="hero-name">Hi, I'm <em>Onur.</em></h1>
+      <p class="hero-bio">
+        Computer science student at <strong>The College of New Jersey</strong> who likes building
+        across the stack, from Rails web apps to C networking code and a self-hosted homelab.
       </p>
-      <a href="#projects" class="hero-cta">See my work →</a>
+      <div class="hero-actions">
+        <a href="#projects" class="btn btn-primary">See my work →</a>
+        <a href="./resume/index.html" class="btn">
+          <svg class="icon"><use href="#i-file"/></svg>Resume
+        </a>
+        <div class="hero-socials">
+          <a href="https://github.com/onurk0" target="_blank" rel="noopener" aria-label="GitHub"><svg class="icon icon-fill"><use href="#i-github"/></svg></a>
+          <a href="https://linkedin.com/in/onurk0" target="_blank" rel="noopener" aria-label="LinkedIn"><svg class="icon icon-fill"><use href="#i-linkedin"/></svg></a>
+          <a href="mailto:koseo1@tcnj.edu" aria-label="Email"><svg class="icon"><use href="#i-mail"/></svg></a>
+        </div>
+      </div>
     </section>
 
     <!-- ABOUT -->
     <section id="about">
-      <p class="section-label">About</p>
-      <h2 class="section-title">A bit about me</h2>
+      <div class="section-head">
+        <p class="section-label">About</p>
+        <h2 class="section-title">A bit about me</h2>
+      </div>
       <div class="about-grid">
         <div class="about-text fade-in">
           <p>
-            I'm a junior computer science student with a broad interest in technology.
-            My current interests are anything from full stack applications, AI, and low-level 
-            systems.
+            I'm a computer science student with a broad interest in technology, from
+            <strong>full-stack applications</strong> and <strong>AI</strong> to <strong>low-level systems</strong>
+            and networking.
           </p>
           <p>
             Away from the screen, I spend my time with friends and family, and outdoors!
           </p>
-          <div class="about-links">
-            <a href="./resume.pdf" class="about-link">My Resume</a>
-            <a href="https://github.com/onurk0" target="_blank" class="about-link">GitHub Profile</a>
-            <a href="https://linkedin.com/in/onurk0" target="_blank" class="about-link">LinkedIn</a>
+          <div class="edu-card">
+            <div class="edu-icon"><svg class="icon"><use href="#i-cap"/></svg></div>
+            <div>
+              <div class="edu-school">B.S. Computer Science · The College of New Jersey</div>
+              <div class="edu-meta">Aug 2023 – May 2027 · Ewing, NJ</div>
+            </div>
           </div>
         </div>
         <div class="about-stats fade-in">
@@ -484,134 +112,185 @@
           </div>
           <div class="stat-item">
             <div class="stat-number">1</div>
-            <div class="stat-desc">research project</div>
+            <div class="stat-desc">research position</div>
           </div>
           <div class="stat-item">
-            <div class="stat-number">8</div>
+            <div class="stat-number">5</div>
             <div class="stat-desc">languages in my toolkit</div>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- EXPERIENCE -->
+    <section id="experience">
+      <div class="section-head">
+        <p class="section-label">Experience</p>
+        <h2 class="section-title">Where I've worked</h2>
+      </div>
+      <article class="xp-item fade-in">
+        <div class="xp-when">Jan 2026 – Present</div>
+        <div>
+          <h3 class="xp-role">Undergraduate Research Assistant</h3>
+          <p class="xp-org">CABPortal · The College of New Jersey</p>
+          <ul class="bullets">
+            <li>Contribute to CABPortal, a faculty collaboration platform that connects researchers and promotes interdisciplinary work.</li>
+            <li>Building an LLM-powered project relationship graph that parses project descriptions to cluster and visually connect similar projects by keywords and topics.</li>
+            <li>Collaborating on the design of a two-factor authentication (2FA) interface to strengthen secure access.</li>
+          </ul>
+          <ul class="tags">
+            <li class="tag">Python</li>
+            <li class="tag">Flask</li>
+            <li class="tag">D3.js</li>
+            <li class="tag">PostgreSQL</li>
+            <li class="tag">LLMs</li>
+          </ul>
+        </div>
+      </article>
+    </section>
+
     <!-- PROJECTS -->
     <section id="projects">
-      <p class="section-label">Projects</p>
-      <h2 class="section-title">Things I've built</h2>
+      <div class="section-head">
+        <p class="section-label">Projects</p>
+        <h2 class="section-title">Things I've built</h2>
+      </div>
       <div class="projects-list">
 
-        <div class="project-card fade-in">
-          <div class="project-header">
-            <span class="project-name">Multi User Chat Room</span>
-            <div class="project-links">
-              <a href="https://github.com/onurk0/Multi_User_Chat_Room" target="_blank" class="project-link">GitHub ↗</a>
+        <article class="project-card fade-in">
+          <div class="project-top">
+            <div>
+              <p class="project-kicker">Full-stack web app</p>
+              <h3 class="project-name">StreetFix</h3>
             </div>
+            <span class="project-date">Jan – May 2026</span>
           </div>
           <p class="project-desc">
-            Collaborated with a partner to develop a command-line chat application using Linux socket 
-            libraries that can handle multiple connections, simultaneous chat rooms, and file transfers.
+            A community platform for reporting, tracking, and managing local infrastructure issues in one place.
           </p>
-          <div class="project-tags">
-            <span class="tag">C</span>
-            <span class="tag">Linux Socket Libraries</span>
-            <span class="tag">Networking</span>
-            <span class="tag">Process Handling</span>
+          <ul class="bullets">
+            <li>Secure authentication and role-based authorization, with separate permissions for citizens and administrators.</li>
+            <li>RESTful CRUD workflows for creating and managing reports.</li>
+            <li>Community voting and report ranking so the most pressing issues rise to the top.</li>
+          </ul>
+          <div class="project-bottom">
+            <ul class="tags">
+              <li class="tag">Ruby on Rails</li>
+              <li class="tag">PostgreSQL</li>
+              <li class="tag">REST</li>
+              <li class="tag">Auth &amp; RBAC</li>
+            </ul>
+            <a href="https://github.com/onurk0/StreetFix" target="_blank" rel="noopener" class="project-link">
+              <svg class="icon icon-fill"><use href="#i-github"/></svg>Code<svg class="icon"><use href="#i-arrow"/></svg>
+            </a>
           </div>
-        </div>
+        </article>
 
-        <div class="project-card fade-in">
-          <div class="project-header">
-            <span class="project-name">Unix Shell</span>
-            <div class="project-links">
-              <a href="https://github.com/onurk0/Unix-Shell" target="_blank" class="project-link">GitHub ↗</a>
+        <article class="project-card fade-in">
+          <div class="project-top">
+            <div>
+              <p class="project-kicker">Networking · Systems</p>
+              <h3 class="project-name">Multi User Chat Room</h3>
             </div>
+            <span class="project-date">Nov – Dec 2025</span>
           </div>
           <p class="project-desc">
-            Built a shell to handle UNIX-like commands with support for process creation, directory 
-            navigation, background execution, I/O redirection, and single pipe commands.
+            A command-line chat application in C, built with a partner, that supports many simultaneous clients.
           </p>
-          <div class="project-tags">
-            <span class="tag">C</span>
-            <span class="tag">Linux System Calls</span>
-            <span class="tag">Process Handling</span>
+          <ul class="bullets">
+            <li>Backend supporting multiple simultaneous chat rooms with a live view of existing rooms and participants.</li>
+            <li>Peer-to-peer file transfer protocol using asynchronous threads, so transfers never interrupt the conversation.</li>
+          </ul>
+          <div class="project-bottom">
+            <ul class="tags">
+              <li class="tag">C</li>
+              <li class="tag">POSIX Sockets</li>
+              <li class="tag">Threads</li>
+              <li class="tag">Networking</li>
+            </ul>
+            <a href="https://github.com/onurk0/Multi_User_Chat_Room" target="_blank" rel="noopener" class="project-link">
+              <svg class="icon icon-fill"><use href="#i-github"/></svg>Code<svg class="icon"><use href="#i-arrow"/></svg>
+            </a>
           </div>
-        </div>
+        </article>
 
-        <div class="project-card fade-in">
-          <div class="project-header">
-            <span class="project-name">Internet Speed Tester</span>
-            <div class="project-links">
-              <a href="https://github.com/onurk0/Internet-Speed-Tester" target="_blank" class="project-link">GitHub ↗</a>
+        <article class="project-card fade-in">
+          <div class="project-top">
+            <div>
+              <p class="project-kicker">Infrastructure</p>
+              <h3 class="project-name">Homelab Infrastructure</h3>
             </div>
+            <span class="project-date">Sep 2025 – Present</span>
           </div>
           <p class="project-desc">
-            Designed a full-stack client server application to measure upload and download speed 
-            between two devices.
+            A Debian-based home server I designed and maintain, hosting self-managed services like Jellyfin and Nextcloud.
           </p>
-          <div class="project-tags">
-            <span class="tag">Rust</span>
-            <span class="tag">Iced</span>
-            <span class="tag">Asynchronous Threads</span>
-            <span class="tag">Networking</span>
+          <ul class="bullets">
+            <li>Secure remote access, automated backups, and network storage for media streaming and a private cloud.</li>
+            <li>Administer Linux users, permissions, and networking, and troubleshoot hardware and software issues.</li>
+          </ul>
+          <div class="project-bottom">
+            <ul class="tags">
+              <li class="tag">Debian</li>
+              <li class="tag">Linux Admin</li>
+              <li class="tag">Jellyfin</li>
+              <li class="tag">Nextcloud</li>
+              <li class="tag">Networking</li>
+            </ul>
+            <span class="project-note">Self-hosted · ongoing</span>
           </div>
-        </div>
+        </article>
 
       </div>
+      <p class="more-link"><a href="https://github.com/onurk0?tab=repositories" target="_blank" rel="noopener">More on GitHub →</a></p>
     </section>
 
     <!-- SKILLS -->
     <section id="skills">
-      <p class="section-label">Skills</p>
-      <h2 class="section-title">What I work with</h2>
-      <div class="skills-grid fade-in">
+      <div class="section-head">
+        <p class="section-label">Skills</p>
+        <h2 class="section-title">What I work with</h2>
+      </div>
+      <div class="skills-grid">
 
-        <div>
+        <div class="skill-group fade-in">
           <p class="skill-group-title">Languages</p>
-          <div class="skill-pills">
-            <span class="skill-pill">C</span>
-            <span class="skill-pill">C++</span>
-            <span class="skill-pill">Go</span>
-            <span class="skill-pill">Java</span>
-            <span class="skill-pill">JavaScript</span>
-            <span class="skill-pill">Python</span>
-            <span class="skill-pill">Ruby</span>
-            <span class="skill-pill">Rust</span>
-          </div>
+          <ul class="skill-pills">
+            <li class="skill-pill">C</li>
+            <li class="skill-pill">C++</li>
+            <li class="skill-pill">Python</li>
+            <li class="skill-pill">Ruby</li>
+            <li class="skill-pill">Rust</li>
+          </ul>
         </div>
 
-        <div>
-          <p class="skill-group-title">Areas of Interest</p>
-          <div class="skill-pills">
-            <span class="skill-pill">Full Stack</span>
-            <span class="skill-pill">Databases</span>
-            <span class="skill-pill">Systems</span>
-            <span class="skill-pill">Backend</span>
-            <span class="skill-pill">Networking</span>
-          </div>
+        <div class="skill-group fade-in">
+          <p class="skill-group-title">Frameworks &amp; Technologies</p>
+          <ul class="skill-pills">
+            <li class="skill-pill">Flask</li>
+            <li class="skill-pill">Ruby on Rails</li>
+            <li class="skill-pill">SQL</li>
+            <li class="skill-pill">Linux</li>
+          </ul>
         </div>
 
-        <div>
-          <p class="skill-group-title">Tools & Frameworks</p>
-          <div class="skill-pills">
-            <span class="skill-pill">Git</span>
-            <span class="skill-pill">Linux</span>
-            <span class="skill-pill">Rails</span>
-            <span class="skill-pill">Flask</span>
-            <span class="skill-pill">Docker</span>
-            <span class="skill-pill">SQL</span>
-            <span class="skill-pill">CMake</span>
-            <span class="skill-pill">Valgrind</span>
-          </div>
+        <div class="skill-group fade-in">
+          <p class="skill-group-title">Databases</p>
+          <ul class="skill-pills">
+            <li class="skill-pill">PostgreSQL</li>
+            <li class="skill-pill">SQLite</li>
+          </ul>
         </div>
 
-        <div>
-          <p class="skill-group-title">Currently Learning</p>
-          <div class="skill-pills">
-            <span class="skill-pill">Next.js</span>
-            <span class="skill-pill">PyTorch</span>
-            <span class="skill-pill">Distributed Systems</span>
-            <span class="skill-pill">AI/ML</span>
-          </div>
+        <div class="skill-group fade-in">
+          <p class="skill-group-title">Developer Tools</p>
+          <ul class="skill-pills">
+            <li class="skill-pill">Git</li>
+            <li class="skill-pill">GitHub</li>
+            <li class="skill-pill">Docker</li>
+            <li class="skill-pill">VS Code</li>
+            <li class="skill-pill">Vim</li>
+          </ul>
         </div>
 
       </div>
@@ -620,13 +299,19 @@
     <!-- CONTACT -->
     <section id="contact">
       <div class="contact-inner fade-in">
-        <p class="section-label" style="text-align:center;">Contact</p>
+        <p class="section-label">Contact</p>
         <h2 class="section-title">Let's connect</h2>
-        <p class="contact-sub">Open to talk, collaborate, and internships for Summer 2026!</p>
-        <a href="mailto:koseo1@tcnj.edu" class="contact-email">koseo1@tcnj.edu</a>
+        <p class="contact-sub">Always happy to talk tech, collaborate on a project, or chat about opportunities.</p>
+        <div class="email-row">
+          <a href="mailto:koseo1@tcnj.edu" class="contact-email">koseo1@tcnj.edu</a>
+          <button class="copy-btn" id="copyBtn" type="button" data-email="koseo1@tcnj.edu">
+            <svg class="icon"><use href="#i-copy"/></svg><span>Copy</span>
+          </button>
+        </div>
         <div class="contact-socials">
-          <a href="https://github.com/onurk0" target="_blank" class="social-btn">GitHub</a>
-          <a href="https://linkedin.com/in/onurk0" target="_blank" class="social-btn">LinkedIn</a>
+          <a href="https://github.com/onurk0" target="_blank" rel="noopener" class="btn"><svg class="icon icon-fill"><use href="#i-github"/></svg>GitHub</a>
+          <a href="https://linkedin.com/in/onurk0" target="_blank" rel="noopener" class="btn"><svg class="icon icon-fill"><use href="#i-linkedin"/></svg>LinkedIn</a>
+          <a href="./resume/index.html" class="btn"><svg class="icon"><use href="#i-file"/></svg>Resume</a>
         </div>
       </div>
     </section>
@@ -634,97 +319,11 @@
   </main>
 
   <footer>
-    <p>Hosted on GitHub Pages</p>
+    <span>© <span id="year">2026</span> Onur Kose</span>
+    <a href="#hero">Back to top ↑</a>
   </footer>
 
-  <!-- THEME PICKER -->
-  <div class="theme-picker" id="themePicker">
-    <div class="theme-panel" id="themePanel">
-      <div class="theme-panel-title">Color theme</div>
-
-      <div class="theme-group">
-        <span class="theme-group-name">Forest</span>
-        <div class="theme-mode-btns">
-          <button class="mode-btn" data-theme="forest-light"><div class="mode-dot" style="background:#f0efea;border:1px solid #ccc;"></div>Light</button>
-          <button class="mode-btn" data-theme="forest-dark"><div class="mode-dot" style="background:#0e120f;"></div>Dark</button>
-        </div>
-      </div>
-      <div class="theme-group">
-        <span class="theme-group-name">Ocean</span>
-        <div class="theme-mode-btns">
-          <button class="mode-btn" data-theme="ocean-light"><div class="mode-dot" style="background:#1560a8;"></div>Light</button>
-          <button class="mode-btn" data-theme="ocean-dark"><div class="mode-dot" style="background:#4d9fd4;"></div>Dark</button>
-        </div>
-      </div>
-      <div class="theme-group">
-        <span class="theme-group-name">Violet</span>
-        <div class="theme-mode-btns">
-          <button class="mode-btn" data-theme="violet-light"><div class="mode-dot" style="background:#5b3fc8;"></div>Light</button>
-          <button class="mode-btn" data-theme="violet-dark"><div class="mode-dot" style="background:#8a76f5;"></div>Dark</button>
-        </div>
-      </div>
-      <div class="theme-group">
-        <span class="theme-group-name">Rose</span>
-        <div class="theme-mode-btns">
-          <button class="mode-btn" data-theme="rose-light"><div class="mode-dot" style="background:#b53048;"></div>Light</button>
-          <button class="mode-btn" data-theme="rose-dark"><div class="mode-dot" style="background:#e06080;"></div>Dark</button>
-        </div>
-      </div>
-      <div class="theme-group">
-        <span class="theme-group-name">Amber</span>
-        <div class="theme-mode-btns">
-          <button class="mode-btn" data-theme="amber-light"><div class="mode-dot" style="background:#9e6010;"></div>Light</button>
-          <button class="mode-btn" data-theme="amber-dark"><div class="mode-dot" style="background:#d4942a;"></div>Dark</button>
-        </div>
-      </div>
-      <div class="theme-group">
-        <span class="theme-group-name">Slate</span>
-        <div class="theme-mode-btns">
-          <button class="mode-btn" data-theme="slate-light"><div class="mode-dot" style="background:#2c5080;"></div>Light</button>
-          <button class="mode-btn" data-theme="slate-dark"><div class="mode-dot" style="background:#6a9fd8;"></div>Dark</button>
-        </div>
-      </div>
-      <div class="theme-group">
-        <span class="theme-group-name">Mono</span>
-        <div class="theme-mode-btns">
-          <button class="mode-btn" data-theme="mono-light"><div class="mode-dot" style="background:#e0e0e0;border:1px solid #ccc;"></div>Light</button>
-          <button class="mode-btn" data-theme="mono-dark"><div class="mode-dot" style="background:#111;"></div>Dark</button>
-        </div>
-      </div>
-
-    </div>
-    <button class="theme-toggle-btn" id="themeToggleBtn" aria-label="Change color theme">🎨</button>
-  </div>
-
-  <script>
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry, i) => {
-        if (entry.isIntersecting) setTimeout(() => entry.target.classList.add('visible'), i * 80);
-      });
-    }, { threshold: 0.1 });
-    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-
-    const root = document.documentElement;
-    const panel = document.getElementById('themePanel');
-    const toggleBtn = document.getElementById('themeToggleBtn');
-
-    const saved = localStorage.getItem('portfolio-theme');
-    if (saved) applyTheme(saved);
-
-    toggleBtn.addEventListener('click', (e) => { e.stopPropagation(); panel.classList.toggle('open'); });
-    document.addEventListener('click', () => panel.classList.remove('open'));
-    panel.addEventListener('click', (e) => e.stopPropagation());
-
-    document.querySelectorAll('.mode-btn').forEach(btn => {
-      btn.addEventListener('click', () => { applyTheme(btn.dataset.theme); panel.classList.remove('open'); });
-    });
-
-    function applyTheme(theme) {
-      root.setAttribute('data-theme', theme);
-      localStorage.setItem('portfolio-theme', theme);
-      document.querySelectorAll('.mode-btn').forEach(b => b.classList.toggle('active', b.dataset.theme === theme));
-    }
-  </script>
+  <script src="./js/main.js"></script>
 
 </body>
 </html>
